@@ -1,0 +1,405 @@
+@import url('components.css');
+
+.dashboard .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Menyesuaikan ukuran kotak agar responsif */
+    gap: 1.5rem; /* Jarak antar kotak */
+    align-items: stretch; /* Menjaga agar semua kotak memiliki tinggi yang sama */
+}
+
+.dashboard .box-container .box {
+    max-width: 100%; /* Maksimal lebar kotak */
+    margin: 0; /* Hilangkan margin untuk penyelarasan dalam grid */
+    padding: 2rem; /* Padding internal kotak */
+    text-align: center; /* Menyusun teks di tengah */
+    border: var(--border); /* Border kotak */
+    box-shadow: var(--box-shadow); /* Bayangan kotak */
+    background-color: var(--white); /* Warna latar belakang kotak */
+    border-radius: .5rem; /* Radius border untuk sudut kotak */
+    transition: transform .2s ease-in-out; /* Efek transisi saat hover */
+    display: flex; /* Menyusun isi kotak dengan flexbox */
+    flex-direction: column; /* Menyusun isi kotak secara vertikal */
+    justify-content: space-between; /* Menjaga jarak yang sama antara elemen dalam kotak */
+    min-height: 20rem; /* Tinggi minimum kotak untuk konsistensi */
+}
+
+
+/* Efek hover pada kotak */
+.dashboard .box-container .box:hover {
+    transform: translateY(-0.5rem); /* Efek angkat saat hover */
+}
+
+.btn:hover, .delete-btn:hover, .option-btn:hover {
+    background-color: var(--black); /* Warna latar belakang tombol saat hover */
+}
+
+.dashboard .box-container .box .btn {
+    display: inline-block; /* Menyusun tombol secara baris */
+    margin-top: 1rem; /* Jarak antara tombol dan elemen lainnya */
+    border-radius: .5rem; /* Radius border untuk sudut tombol */
+    color: var(--white); /* Warna teks tombol */
+    font-size: 1.6rem; /* Ukuran font tombol */
+    font-weight: 400;
+    padding: 1rem 2rem; /* Padding internal tombol */
+    text-transform: capitalize; /* Mengatur teks tombol */
+    cursor: pointer; /* Menunjukkan pointer saat hover */
+    text-align: center; /* Menyusun teks di tengah */
+    text-decoration: none; /* Menghilangkan garis bawah pada tombol */
+    background-color: #ca00d8;
+}
+
+.dashboard .box-container .box h3 {
+    font-size: 3rem;
+    color: var(--black);
+}
+
+.dashboard .box-container .box p {
+    font-size: 2rem;
+    background-color: var(--light-bg);
+    color: var(--light-color);
+    padding: 1rem;
+    margin: .6rem 0;
+    border: var(--border);
+    border-radius: .5rem;
+    color: var(--black);
+}
+
+
+.add-products form{
+    max-width: 60rem;
+    margin: 0 auto; /* Hilangkan margin untuk penyelarasan dalam grid */
+    padding: 2rem; /* Padding internal kotak */
+    text-align: center; /* Menyusun teks di tengah */
+    border: var(--border); /* Border kotak */
+    box-shadow: var(--box-shadow); /* Bayangan kotak */
+    background-color: var(--white); /* Warna latar belakang kotak */
+    border-radius: .5rem; /* Radius border untuk sudut kotak */
+}
+
+.add-products form .flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.add-products form .flex .inputBox{
+    width: 49%;
+}
+
+.add-products form .box{
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1,2rem 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    border: var(--border);
+}
+
+.add-products form textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.add-products .btn{
+    background-color: #ca00d8;
+}
+
+
+.show-products .box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Menampilkan 3 kolom per baris */
+    gap: 1.5rem; /* Jarak antar kotak */
+    align-items: start;
+    justify-content: center;
+    padding: 2rem; /* Mengurangi padding di kanan dan kiri untuk responsivitas */
+}
+
+.show-products .box-container .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1rem; /* Padding di dalam kotak */
+    position: relative;
+    min-height: 350px; /* Tinggi minimum kotak */
+    height: 100%; /* Memastikan kotak mengisi tinggi kontainer */
+    overflow: hidden;
+    box-sizing: border-box; /* Menghitung padding dan border dalam ukuran kotak */
+}
+
+.show-products .box-container .box img {
+    width: 100%;
+    height: 200px; /* Menetapkan tinggi gambar */
+    object-fit: cover; /* Menjaga proporsi gambar */
+    border-radius: .5rem; /* Menyesuaikan dengan border radius kotak */
+    margin-bottom: 1rem;
+}
+
+.show-products .box-container .box .price {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: .5rem;
+    font-size: 1.5rem;
+    color: var(--white);
+    background-color: var(--green);
+    border-radius: .5rem;
+}
+
+.show-products .box-container .box .name {
+    margin: .5rem 0;
+    font-size: 1.9rem;
+    color: var(--black);
+    text-align: center;
+}
+
+.show-products .box-container .box .cat {
+    font-size: 1.6rem;
+    color: blue;
+    font-weight: 400;
+    text-align: center;
+}
+
+.show-products .box-container .box .details {
+    padding: .5rem 0;
+    font-size: 1.3rem;
+    color: var(--light-color);
+    flex-grow: 1;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.update-product form{
+    max-width: 50rem;
+    margin: 0 auto; /* Hilangkan margin untuk penyelarasan dalam grid */
+    padding: 2rem; /* Padding internal kotak */
+    text-align: center; /* Menyusun teks di tengah */
+    border: var(--border); /* Border kotak */
+    box-shadow: var(--box-shadow); /* Bayangan kotak */
+    background-color: var(--white); /* Warna latar belakang kotak */
+    border-radius: .5rem; /* Radius border untuk sudut kotak */
+}
+
+.update-product form img{
+    height: 20rem;
+    width: 20rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+
+}
+
+.update-product form .box{
+    width: 100%;
+    border: var(--border);
+    background-color: var(--white);
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    margin: 1rem 0;
+}
+
+.placed-orders .box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom dalam satu baris */
+    gap: 1rem; /* Jarak antar kotak */
+    padding: 1.5rem; /* Padding di sekitar grid container */
+    justify-content: center; /* Pusatkan grid dalam kontainer */
+}
+
+.placed-orders .box-container .box {
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1rem; /* Padding di dalam kotak */
+    box-sizing: border-box; /* Menghitung padding dan border dalam ukuran kotak */
+    overflow: hidden; /* Menyembunyikan konten yang melampaui kotak */
+    display: flex;
+    flex-direction: column; /* Menyusun konten dalam kotak secara vertikal */
+    justify-content: space-between; /* Membuat konten dalam kotak memiliki ruang antar elemen */
+    min-height: 250px; /* Menentukan tinggi minimum agar kotak sejajar */
+}
+
+.placed-orders .box-container .box img {
+    width: 100%; /* Mengatur lebar gambar */
+    height: auto; /* Mengatur tinggi gambar otomatis */
+}
+
+.placed-orders .box-container .box p {
+    margin: 0.5rem 0; /* Margin atas dan bawah untuk teks */
+    line-height: 1.2; /* Jarak antar baris teks */
+    font-size: 1.6rem; /* Mengurangi ukuran font untuk teks */
+    color: var(--black);
+    flex-grow: 1; /* Membuat paragraf mengisi ruang yang tersedia */
+}
+
+.placed-orders .box-container .box p span {
+    color: var(--green);
+    font-weight: 400; /* Mengurangi ketebalan teks */
+}
+
+.placed-orders .box-container .box .drop-down {
+    width: 100%;
+    padding: 0.6rem; /* Mengurangi padding internal dropdown */
+    font-size: 1.2rem; /* Mengurangi ukuran font dropdown */
+    border: var(--border);
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    margin-bottom: 0.3rem; /* Margin bawah dropdown */
+}
+
+
+.user-accounts .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.user-accounts .box-container .box{
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1rem; /* Mengurangi padding di dalam kotak */
+    box-sizing: border-box; /* Menghitung padding dan border dalam ukuran kotak */
+    overflow: hidden; /* Menyembunyikan konten yang melampaui kotak */
+    text-align: center;
+}
+
+.user-accounts .box-container .box img{
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.user-accounts .box-container .box p{
+    line-height: 1.5;
+    margin: .5rem 0;
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.user-accounts .box-container .box p span{
+    color: var(--green);
+}
+
+
+
+.admin-accounts .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.admin-accounts .box-container .box{
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1rem; /* Mengurangi padding di dalam kotak */
+    box-sizing: border-box; /* Menghitung padding dan border dalam ukuran kotak */
+    overflow: hidden; /* Menyembunyikan konten yang melampaui kotak */
+    text-align: center;
+}
+
+.admin-accounts .box-container .box img{
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.admin-accounts .box-container .box p{
+    line-height: 1.5;
+    margin: .5rem 0;
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.admin-accounts .box-container .box p span{
+    color: var(--green);
+}
+
+.messages .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.messages .box-container .box{
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1rem; /* Mengurangi padding di dalam kotak */
+    box-sizing: border-box; /* Menghitung padding dan border dalam ukuran kotak */
+    overflow: hidden; /* Menyembunyikan konten yang melampaui kotak */
+    
+}
+
+.messages .box-container .box p{
+    line-height: 1.5;
+    margin: .5rem 0;
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.messages .box-container .box p span{
+    color: var(--green);
+}
+
+
+
+
+
+@media (max-width:768px){
+    .add-products form .flex .inputBox{
+        width: 100%;
+    }
+    .show-products .box-container {
+        grid-template-columns: repeat(2, 1fr); /* Menampilkan 2 kolom per baris pada layar kecil */
+    }
+
+    .placed-orders .box-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom dalam satu baris */
+    }
+}
+
+@media (max-width:450px){
+    .show-products .box-container {
+        grid-template-columns: 1fr; /* Menampilkan 1 kolom per baris pada layar sangat kecil */
+    }
+
+    .update-product form img{
+        height: auto;
+        width: 100%;
+    }
+
+    .placed-orders .box-container{
+        grid-template-columns: 1fr;
+    }
+
+    .user-accounts .box-container{
+        grid-template-columns: 1fr;
+    }
+}
